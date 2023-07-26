@@ -1,28 +1,28 @@
 import React from 'react';
 import './App.css';
+import {TaskType, Todolist} from "./Todolist";
 
 function App() {
+
+    let tasks1: TaskType[] = [
+        {id:1, title: "CSS & HTML", isDone: true},
+        {id:1, title: "JS", isDone: true},
+        {id:1, title: "React", isDone: false}
+    ]
+
+    let tasks2: TaskType[] = [
+        {id:1, title: "Cone", isDone: true},
+        {id:1, title: "Matrix", isDone: false},
+        {id:1, title: "Braking Bad", isDone: false}
+    ]
+
     return (
         <div className="App">
-            <div>
-                <h3>What to learn</h3>
-                <div>
-                    <input/>
-                    <button>+</button>
-                </div>
-                <ul>
-                    <li><input type="checkbox" checked={true}/> <span>HTML&CSS</span></li>
-                    <li><input type="checkbox" checked={true}/> <span>JS</span></li>
-                    <li><input type="checkbox" checked={false}/> <span>React</span></li>
-                </ul>
-                <div>
-                    <button>All</button>
-                    <button>Active</button>
-                    <button>Completed</button>
-                </div>
-            </div>
+            <Todolist title="What to learn?" tasks={tasks1}/>
+            <Todolist title="Movies" tasks={tasks2}/>
         </div>
     );
 }
+
 
 export default App;
